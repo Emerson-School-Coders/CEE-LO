@@ -147,35 +147,38 @@ def user_roll():
 		if respond("user") == True:
 			break
 			
-def ye_function():
-	p = press_enter("")
-	
+def ye_function():	
 	on_roll["user"] = 0
 	on_roll["computer"] = 0
 	
-	if p == "y" or p == "ye" or p == "yes" or p == "yeah":
-		user_roll()
-	elif p == "n" or p == "no" or p == "nay" or p == "nope":
-		print_slowly("Ok.	See you later then...")
-		exit()
-	else:
-		print_slowly("That was NOT the requested input!	\n")
-		exit()
+	y_or_n = press_enter("")
+	
+	while True:
+		if "y" in y_or_n:
+			user_roll()
+			break
+		elif "n" in y_or_n:
+			print_slowly("Ok.	 See you later then...")
+			exit()
+		else:
+			print_slowly('That was NOT the requested input!	\nPlease type "y" or "n". ')
+			y_or_n = press_enter("")
+		
 			
 def computer_roll():
 	while True:
 		if user_score["user"] == 13:
-			print_slowly("You got a 4, 5, and 6!	\nThere is no way I can win.	\nGood game!	\nWould you like to play again? (y/n)")
+			print_slowly("You got a 4, 5, and 6!	\nThere is no way I can win.	\nGood game!	\nWould you like to play again? (y/n) ")
 			ye_function()
 			
 		roll("computer")
 		if respond("computer") == True:
 			if user_score["user"] > user_score["computer"]:
-				print_slowly("You beat me!	\nGood game.	\nWould you like to play again? (y/n)")
+				print_slowly("You beat me!	\nGood game.	\nWould you like to play again? (y/n) ")
 				ye_function()
 				
 			else:
-				print_slowly("I won!	\nThanks for playing.	\nWould you like to play again? (y/n)")
+				print_slowly("I won!	\nThanks for playing.	\nWould you like to play again? (y/n) ")
 				ye_function()
 	
 #logo
