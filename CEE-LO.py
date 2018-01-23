@@ -90,7 +90,7 @@ def print_slowly(text):
 		c = randint(5, 8)/100
 		s = randint(4, 17)/100
 		if l == "	":
-			sleep(0.6)
+			sleep(0.67)
 		elif l == " ":
 			print(l, end = "")
 			sys.stdout.flush()
@@ -179,7 +179,7 @@ def computer_roll():
 			print_slowly("There is no way I can win.	\nGood game!	\nWould you like to play again? (y/n) ")
 			ye_function()
 		elif user_score["user"] == 0 or user_score["user"] == 1:
-			print_slowly("That's too bad...	\nThanks for playing!	\nWould you like to play again? (y/n) ")
+			print_slowly("Sorry for your	instant lose...	\nThanks for playing!	\nWould you like to play again? (y/n) ")
 			ye_function()
 			
 		roll("computer")
