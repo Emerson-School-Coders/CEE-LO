@@ -86,13 +86,20 @@ def dice_check(numbers):
 
 #makes text print slower
 def print_slowly(text):
+	c = randint(5, 8)/100
+	s = randint(4, 17)/100
 	for l in text:
-		if l != "	":
+		if l == "	":
+			sleep(1)
+		elif l == " ":
 			print(l, end = "")
 			sys.stdout.flush()
-			sleep(0.07)
+			sleep(s)
 		else:
-			sleep(1)
+			print(l, end = "")
+			sys.stdout.flush()
+			sleep(c)
+			
 			
 #gets user to press enter to proceed
 def press_enter(text):
@@ -154,12 +161,13 @@ def ye_function():
 	y_or_n = press_enter("")
 	
 	while True:
-		if "y" in y_or_n:
-			user_roll()
-			break
-		elif "n" in y_or_n:
-			print_slowly("Ok.	 See you later then...")
-			exit()
+		if len(y_or_n) < 5:
+			if y_or_n.find("y") == 0:
+				user_roll()
+				break
+			elif y_or_n.find("n") == 0:
+				print_slowly("Ok.	 See you later then...")
+				exit()
 		else:
 			print_slowly('That was NOT the requested input!	\nPlease type "y" or "n". ')
 			y_or_n = press_enter("")
@@ -167,8 +175,11 @@ def ye_function():
 			
 def computer_roll():
 	while True:
-		if user_score["user"] == 13:
-			print_slowly("You got a 4, 5, and 6!	\nThere is no way I can win.	\nGood game!	\nWould you like to play again? (y/n) ")
+		if user_score["user"] == 13 or user_score["user"] == 6:
+			print_slowly("There is no way I can win.	\nGood game!	\nWould you like to play again? (y/n) ")
+			ye_function()
+		elif user_score["user"] == 0 or user_score["user"] == 1:
+			print_slowly("That's too bad...	\nThanks for playing!	\nWould you like to play again? (y/n) ")
 			ye_function()
 			
 		roll("computer")
