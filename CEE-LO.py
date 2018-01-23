@@ -161,7 +161,13 @@ def ye_function():
 	y_or_n = press_enter("")
 	
 	while True:
-		if len(y_or_n) < 5:
+		v_second = False
+		vowels = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"]
+		for l in y_or_n:
+			if l in vowels and y_or_n.find(l) == 1:
+				v_second = True
+				
+		if v_second == True:
 			if y_or_n.find("y") == 0:
 				user_roll()
 				break
@@ -169,7 +175,7 @@ def ye_function():
 				print_slowly("Ok.	 See you later then...")
 				exit()
 		else:
-			print_slowly('That was NOT the requested input!	\nPlease type "y" or "n". ')
+			print_slowly('That was NOT the requested input!	\nPlease type "yes" or "no". ')
 			y_or_n = press_enter("")
 		
 			
