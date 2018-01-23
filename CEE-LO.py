@@ -90,7 +90,7 @@ def print_slowly(text):
 		c = randint(5, 8)/100
 		s = randint(4, 17)/100
 		if l == "	":
-			sleep(1)
+			sleep(0.6)
 		elif l == " ":
 			print(l, end = "")
 			sys.stdout.flush()
