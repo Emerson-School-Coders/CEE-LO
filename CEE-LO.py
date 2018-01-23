@@ -86,9 +86,9 @@ def dice_check(numbers):
 
 #makes text print slower
 def print_slowly(text):
-	c = randint(5, 8)/100
-	s = randint(4, 17)/100
 	for l in text:
+		c = randint(5, 8)/100
+		s = randint(4, 17)/100
 		if l == "	":
 			sleep(1)
 		elif l == " ":
