@@ -162,12 +162,12 @@ def ye_function():
 	
 	while True:
 		v_second = False
-		vowels = ["a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y"]
+		vowels = ["a", "e", "o", "u", "y" "A", "E", "O", "U", "Y"]
 		for l in y_or_n:
 			if l in vowels and y_or_n.find(l) == 1:
 				v_second = True
 				
-		if v_second == True:
+		if v_second == True and len(y_or_n) < 6:
 			if y_or_n.find("y") == 0:
 				user_roll()
 				break
@@ -185,7 +185,7 @@ def computer_roll():
 			print_slowly("There is no way I can win.	\nGood game!	\nWould you like to play again? (y/n) ")
 			ye_function()
 		elif user_score["user"] == 0 or user_score["user"] == 1:
-			print_slowly("Sorry for your	instant lose...	\nThanks for playing!	\nWould you like to play again? (y/n) ")
+			print_slowly("Sorry for your...	\ninstant loss!	\nThanks for playing!	\nWould you like to play again? (y/n) ")
 			ye_function()
 			
 		roll("computer")
