@@ -23,7 +23,7 @@ dice_text = {
 rolled_nums = {
 	"user": [],
 	"computer": []
-}fuckfuckfuck
+}
 
 #stores score of player
 user_score = {
