@@ -103,8 +103,8 @@ def print_slowly(text):
 			
 #gets user to press enter to proceed
 def press_enter():
-	get_input = input("")
-	return get_input
+	g = input("")
+	return g
 
 #responds to rolls
 def respond(user):
@@ -162,7 +162,7 @@ def ye_function():
 	
 	while True:
 		v_second = False
-		vowels = ["a", "e", "o", "u", "y" "A", "E", "O", "U", "Y"]
+		vowels = ["a", "e", "o", "u", "y" "A", "E", "O", "U", "Y", " ", ""]
 		for l in y_or_n:
 			if l in vowels and y_or_n.find(l) == 1:
 				v_second = True
