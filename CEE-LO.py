@@ -102,8 +102,8 @@ def print_slowly(text):
 			
 			
 #gets user to press enter to proceed
-def press_enter(text):
-	get_input = input(text)
+def press_enter():
+	get_input = input("")
 	return get_input
 
 #responds to rolls
@@ -137,7 +137,7 @@ def roll(user):
 			print_slowly("Press enter to roll...")
 		else:
 			print_slowly("Press enter to roll again...")
-		press_enter("")
+		press_enter()
 	else:
 		if on_roll[user] == 0:
 			print_slowly("Now I will roll...	\n")
@@ -158,7 +158,7 @@ def ye_function():
 	on_roll["user"] = 0
 	on_roll["computer"] = 0
 	
-	y_or_n = press_enter("")
+	y_or_n = press_enter()
 	
 	while True:
 		v_second = False
@@ -176,7 +176,7 @@ def ye_function():
 				exit()
 		else:
 			print_slowly('That was NOT the requested input!	\nPlease type "yes" or "no". ')
-			y_or_n = press_enter("")
+			y_or_n = press_enter()
 		
 			
 def computer_roll():
@@ -185,7 +185,7 @@ def computer_roll():
 			print_slowly("There is no way I can win.	\nGood game!	\nWould you like to play again? (y/n) ")
 			ye_function()
 		elif user_score["user"] == 0 or user_score["user"] == 1:
-			print_slowly("Sorry for your...	\ninstant loss!	\nThanks for playing!	\nWould you like to play again? (y/n) ")
+			print_slowly("Sorry for your...	instant loss!	\nThanks for playing!	\nWould you like to play again? (y/n) ")
 			ye_function()
 			
 		roll("computer")
@@ -200,8 +200,10 @@ def computer_roll():
 	
 #logo
 print("  _____     _____    _____          __        ______  \n /  __  \  |   __|  |   __|        |  |      /  __  \ \n|  /  \_/  |  |_    |  |_    ___   |  |     |  /  \  |\n|  |   _   |   _|   |   _|  |___|  |  |     | |    | |\n|  \__/ \  |  |__   |  |__         |  |___  |  \__/  |\n \______/  |_____|  |_____|        |______|  \______/ \n")
-press_enter("	       Press enter to start...\n")
-
+if input('	       Press enter to start...\n	     Type "help" for tutorial...\n') == "help":
+	print_slowly("Here's your dang help:	 https://en.wikipedia.org/wiki/cee-lo	\nPress enter to continue...	\n\n")
+	press_enter()
+	
 print_slowly("Hello user!	\n")
 while True:
 	user_roll()
