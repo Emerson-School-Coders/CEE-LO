@@ -180,7 +180,7 @@ def ye_function():
 		else:
 			print_slowly('That was NOT the requested input!	\nPlease type "yes" or "no". ')
 			y_or_n = press_enter()
-		lolfuck fuck fuck
+		
 			
 def computer_roll():
 	while True:
