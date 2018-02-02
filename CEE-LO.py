@@ -162,7 +162,10 @@ def ye_function():
 	
 	while True:
 		v_second = False
-		vowels = ["a", "e", "o", "u", "y" "A", "E", "O", "U", "Y", " ", ""]
+		vowels = ["a", "e", "o", "u", "y" "A", "E", "O", "U", "Y", " "]
+		if len(y_or_n) == 1:
+			v_second = True
+		
 		for l in y_or_n:
 			if l in vowels and y_or_n.find(l) == 1:
 				v_second = True
@@ -177,7 +180,7 @@ def ye_function():
 		else:
 			print_slowly('That was NOT the requested input!	\nPlease type "yes" or "no". ')
 			y_or_n = press_enter()
-		
+		lolfuck
 			
 def computer_roll():
 	while True:
@@ -201,8 +204,9 @@ def computer_roll():
 #logo
 print("  _____     _____    _____          __        ______  \n /  __  \  |   __|  |   __|        |  |      /  __  \ \n|  /  \_/  |  |_    |  |_    ___   |  |     |  /  \  |\n|  |   _   |   _|   |   _|  |___|  |  |     | |    | |\n|  \__/ \  |  |__   |  |__         |  |___  |  \__/  |\n \______/  |_____|  |_____|        |______|  \______/ \n")
 if input('	       Press enter to start...\n	     Type "help" for tutorial...\n') == "help":
-	print_slowly("Here's your dang help:	 https://en.wikipedia.org/wiki/cee-lo	\nPress enter to continue...	\n\n")
+	print_slowly("Here's your dang help:	 https://en.wikipedia.org/wiki/cee-lo	\nPress enter to continue...")
 	press_enter()
+	print("\n")
 	
 print_slowly("Hello user!	\n")
 while True:
