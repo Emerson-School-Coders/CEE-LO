@@ -9,9 +9,6 @@ on_roll = {
 	"computer": 0
 }
 
-#whether to roll again or not
-roll_again = True
-
 #dice textures
 dice_text = {
 	1: " -------\n|       |\n|   0   |\n|       |\n -------",
@@ -58,11 +55,9 @@ def match_check(rolls):
 				if num1 == 1 and num2 == 2 and num3 == 3:
 					match = True
 					score = 0
-					roll_again = False
 				elif num1 == 4 and num2 == 5 and num3 == 6:
 					match = True
 					score = 13
-					roll_again = False
 					
 	#checks if all three nums are the same
 	if rolls[0] == rolls[1] and rolls[1] == rolls[2]:
@@ -155,10 +150,7 @@ def roll(user):
 
 def user_roll():
 	while True:
-		if roll_again == True:
-			roll("user")
-		else:
-			break
+		roll("user")
 		if respond("user") == True:
 			break
 			
