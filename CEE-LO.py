@@ -172,6 +172,7 @@ def ye_function():
 				
 		if v_second == True and len(y_or_n) < 6:
 			if y_or_n.find("y") == 0:
+				roll_again = True
 				user_roll()
 				break
 			elif y_or_n.find("n") == 0:
