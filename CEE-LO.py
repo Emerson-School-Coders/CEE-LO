@@ -143,10 +143,19 @@ def roll(user):
 			print_slowly("Now I will roll...	\n")
 		else:
 			print_slowly("I will roll again...	\n")
-	rolled_nums[user] = []
-	roll_it(user)
-	on_roll[user] += 1
-	dice_check(rolled_nums[user])
+	
+	if on_roll[user] < 2:		
+		rolled_nums[user] = []
+		roll_it(user)
+		on_roll[user] += 1
+		dice_check(rolled_nums[user])
+	else:
+		while True:
+			rolled_nums[user] = []
+			roll_it(user)
+			dice_check(rolled_nums[user])
+			if match_check(rolled_nums[user])[1] == True:
+				break
 
 def user_roll():
 	while True:
@@ -185,7 +194,7 @@ def ye_function():
 			
 def computer_roll():
 	while True:
-		if user_score["user"] == 13 or user_score["user"] == 6:
+		if user_score["user"] == 6 or user_score["user"] == 13:
 			print_slowly("There is no way I can win.	\nGood game!	\nWould you like to play again? (y/n) ")
 			ye_function()
 		elif user_score["user"] == 0 or user_score["user"] == 1:
